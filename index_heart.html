@@ -1,0 +1,74 @@
+<html>
+<head>
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+<title>
+Heart Attack Prediction
+</title>
+
+</head>
+<body class="bg-light">
+
+
+
+<!-- Navigation bar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Heart Attack Prediction</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Navigation bar -->
+
+
+
+
+
+
+
+<br><br>
+<div class="container lead ">
+
+
+
+<p class="text-center lead">Predicting weather a person would have a heaart disease using  Machine Learning Algorithms</p>
+
+<br>
+
+<form  method="POST" action="{{url_for('predict')}}">
+
+				          	<label for='MaxHR'>Maximum Heart Rate</label>
+                    <input class="form-control" type="text" name="MaxHR" ><br>
+                    <label for='ExAng'>Exercise Induced Angina</label>
+                    <input class="form-control" type="text" name="ExAng"><br>
+                    <label for='Oldpeak'>Oldpeak</label>
+                    <input class="form-control" type="text" name="Oldpeak" ><br>
+					<label for='Slope'>The slope of the peak exercise ST segment</label>
+                    <input class="form-control" type="text" name="Slope" ><br>
+					<label for='Ca'>NO. of major vessels</label>
+                    <input class="form-control" type="text" name="Ca" ><br>
+					<label for='thal'>The heart status as retrieved from</label>
+                    <select class="form-control" type="text" name="thal" >
+					<option value='1 0'>Normal</option>
+					<option value='0 1'>reversable</option>
+					</select><br>
+					<label for='asymptomatic'>Chest Pain 'asymptomatic' </label>
+					<input class="form-control" type="text" name="asymptomatic" ><br>
+					
+<h6 class='lead fw-bold text-center'>{{result}}</h6><br><br>
+            <center><input type="submit"  class="btn btn-primary col-md-7 text-center" value="Predict"></center>
+        	</form>
